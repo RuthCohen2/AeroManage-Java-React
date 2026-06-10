@@ -1,0 +1,685 @@
+/* קונטיינר ראשי הממרכז את הטופס במסך */
+.payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+}
+
+/* כרטיס הטופס המרכזי */
+.payment-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    padding: 35px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+}
+
+.payment-card h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.payment-subtitle {
+    color: #00adb5;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: #aaaaaa;
+    font-weight: 500;
+}
+
+.form-group input {
+    background-color: #252526;
+    border: 1px solid #3c3c3c;
+    padding: 12px 14px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #00adb5;
+    box-shadow: 0 0 0 3px rgba(0, 173, 181, 0.2);
+}
+
+/* השורה שמכילה את התוקף וה-CVV */
+.form-row {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 16px;
+    width: 100%;
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 0; 
+}
+
+.form-row .form-group input {
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+/* תצוגת מחיר בתוך הטופס */
+.price-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #252526;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px dashed #444;
+    margin-top: 5px;
+}
+
+.price-display span {
+    color: #aaa;
+    font-size: 0.95rem;
+}
+
+.price-display strong {
+    color: #28a745;
+    font-size: 1.3rem;
+}
+
+/* כפתור אישור תשלום */
+.submit-payment-btn {
+    background-color: #00adb5;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.submit-payment-btn:hover {
+    background-color: #008c92;
+}
+
+.submit-payment-btn:active {
+    transform: scale(0.98);
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #777777;
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+    text-align: center;
+}
+
+.back-btn:hover {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   עיצוב מסך ההצלחה (Success Screen) החדש
+   ========================================================================== */
+
+.success-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    padding: 40px 35px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    text-align: center;
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* עיגול הוי הירוק החגיגי */
+.success-icon {
+    background-color: rgba(40, 167, 69, 0.15);
+    color: #28a745;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2rem;
+    margin: 0 auto 20px auto;
+    border: 2px solid #28a745;
+}
+
+.success-card h2 {
+    color: #28a745;
+    margin-bottom: 8px;
+    font-size: 1.8rem;
+}
+
+.success-subtitle {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+
+/* ריבוע סיכום פרטי הכרטיס */
+.ticket-summary {
+    background-color: #252526;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: right;
+}
+
+.ticket-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #2d2d2d;
+    padding-bottom: 8px;
+}
+
+.ticket-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.ticket-row span:first-child {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.ticket-row strong {
+    color: #00adb5;
+    font-size: 1.1rem;
+}
+
+.email-notice {
+    color: #777;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+
+/* כפתור חזרה לדף הבית ממסך ההצלחה */
+.success-home-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.success-home-btn:hover {
+    background-color: #218838;
+}
+
+.loading-text {
+    color: #aaa;
+    font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* עיצוב טקסט שגיאות הולדיציה */
+.error-text {
+    color: #ff4d4d; /* צבע אדום שגיאה בולט */
+    font-size: 0.8rem;
+    margin-top: 4px;
+    font-weight: 500;
+    text-align: right;
+    animation: fadeInError 0.2s ease-out;
+}
+
+/* אפקט כניסה קל להודעת השגיאה */
+@keyframes fadeInError {
+    from { opacity: 0; transform: translateY(-3px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ==========================================================================
+   העיצוב המקורי שלך לטופס התשלום (נשמר בדיוק אותו דבר)
+   ========================================================================== */
+
+/* קונטיינר ראשי הממרכז את הטופס במסך */
+.payment-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+}
+
+/* כרטיס הטופס המרכזי */
+.payment-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    padding: 35px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+}
+
+.payment-card h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.payment-subtitle {
+    color: #00adb5;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: #aaaaaa;
+    font-weight: 500;
+}
+
+.form-group input {
+    background-color: #252526;
+    border: 1px solid #3c3c3c;
+    padding: 12px 14px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #00adb5;
+    box-shadow: 0 0 0 3px rgba(0, 173, 181, 0.2);
+}
+
+/* השורה שמכילה את התוקף וה-CVV */
+.form-row {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 16px;
+    width: 100%;
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 0; 
+}
+
+.form-row .form-group input {
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+/* תצוגת מחיר בתוך הטופס */
+.price-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #252526;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px dashed #444;
+    margin-top: 5px;
+}
+
+.price-display span {
+    color: #aaa;
+    font-size: 0.95rem;
+}
+
+.price-display strong {
+    color: #28a745;
+    font-size: 1.3rem;
+}
+
+/* כפתור אישור תשלום */
+.submit-payment-btn {
+    background-color: #00adb5;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.submit-payment-btn:hover {
+    background-color: #008c92;
+}
+
+.submit-payment-btn:active {
+    transform: scale(0.98);
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #777777;
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+    text-align: center;
+}
+
+.back-btn:hover {
+    color: #ffffff;
+}
+
+.loading-text {
+    color: #aaa;
+    font-size: 1.2rem;
+}
+
+.error-text {
+    color: #ff4d4d;
+    font-size: 0.8rem;
+    margin-top: 4px;
+    font-weight: 500;
+    text-align: right;
+    animation: fadeInError 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInError {
+    from { opacity: 0; transform: translateY(-3px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.success-header {
+    text-align: center;
+    margin-bottom: 10px;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.success-icon {
+    background-color: rgba(40, 167, 69, 0.15);
+    color: #28a745;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin: 0 auto 15px auto;
+    border: 2px solid #28a745;
+}
+
+.success-header h2 {
+    color: #28a745;
+    margin-bottom: 6px;
+    font-size: 1.8rem;
+}
+
+.success-header p {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* מבנה כרטיס הטיסה הפיזי */
+.ticket-visual {
+    display: flex;
+    background: #1e1e1e;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    margin: 25px auto;
+    width: 100%;
+    max-width: 650px;
+    border: 1px solid #333;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* הגוף המרכזי של הכרטיס */
+.ticket-main {
+    flex: 3;
+    padding: 25px;
+    border-left: 2px dashed #333; /* קו הגזירה המקווקו */
+    text-align: right;
+}
+
+/* הספח הצידי שנקרע */
+.ticket-stub {
+    flex: 1.1;
+    background-color: #252526;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+/* ויזואליות של נתיב הטיסה (מטוס וקווים) */
+.flight-route-visual {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    direction: ltr; /* שומר על כיוון המטוס משמאל לימין */
+}
+
+.airport-code {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #00adb5;
+    letter-spacing: 1px;
+}
+
+.city-name {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.route-path {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 15px;
+}
+
+.line-dashed {
+    width: 100%;
+    height: 1px;
+    border-bottom: 2px dashed #333;
+}
+
+.plane-icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+    color: #00adb5;
+    font-size: 1.2rem;
+    background: #1e1e1e;
+    padding: 0 8px;
+}
+
+/* תוויות וערכים בתוך הכרטיס */
+.label {
+    display: block;
+    font-size: 0.75rem;
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.value {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.passenger-section {
+    margin-bottom: 15px;
+}
+
+.ticket-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+    border-top: 1px solid #2d2d2d;
+    padding-top: 15px;
+}
+
+/* מדמה פסי ברקוד אמיתיים בתחתית */
+.ticket-barcode {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.barcode-lines {
+    width: 160px;
+    height: 35px;
+    background: linear-gradient(90deg, #ffffff 2px, transparent 2px, transparent 4px, #ffffff 4px, #ffffff 7px, transparent 7px, transparent 10px, #ffffff 10px, #ffffff 11px, transparent 11px, transparent 15px, #ffffff 15px, #ffffff 18px, transparent 18px, transparent 20px, #ffffff 20px, #ffffff 21px, transparent 21px, transparent 26px, #ffffff 26px);
+    background-size: 28px 100%;
+    opacity: 0.6;
+}
+
+.barcode-text {
+    font-size: 0.7rem;
+    color: #555;
+    margin-top: 4px;
+    font-family: monospace;
+}
+
+/* עיצוב הספח (Stub) */
+.stub-header {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #00adb5;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #2d2d2d;
+    padding-bottom: 6px;
+    width: 100%;
+}
+
+.stub-info {
+    margin: 15px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.stub-info .label {
+    margin-top: 10px;
+}
+
+.stub-info .value {
+    font-size: 1rem;
+}
+
+.stub-badge {
+    background-color: #28a745;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* כפתור דף הבית התחתון */
+.success-home-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    max-width: 650px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.success-home-btn:hover {
+    background-color: #218838;
+}

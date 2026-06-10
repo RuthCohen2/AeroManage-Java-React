@@ -1,0 +1,193 @@
+/* ==========================================================================
+   עיצוב דף היסטוריית הזמנות - MyBookingsPage.css
+   ========================================================================== */
+
+/* קונטיינר ראשי הממרכז ומגביל את רוחב הדף */
+.bookings-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    direction: rtl;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* כותרת העמוד */
+.bookings-header {
+    text-align: center;
+}
+
+.bookings-header h2 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.bookings-header p {
+    color: #aaaaaa;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* גריד רספונסיבי המציג את כרטיסי הטיסה בריבוע */
+.bookings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* כרטיס הזמנה בודד */
+.booking-mini-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    animation: fadeInCard 0.4s ease-out;
+}
+
+/* אפקט ריחוף לכרטיס */
+.booking-mini-card:hover {
+    transform: translateY(-5px);
+    border-color: #00adb5;
+    box-shadow: 0 10px 25px rgba(0, 173, 181, 0.15);
+}
+
+/* כותרת פנימית בתוך הכרטיס */
+.mini-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2d2d2d;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+}
+
+.booking-id {
+    font-size: 0.85rem;
+    color: #888888;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+/* תג סטטוס ירוק ומאושר */
+.status-approved {
+    background-color: rgba(40, 167, 69, 0.15);
+    color: #28a745;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+/* תוכן פרטי הכרטיס */
+.mini-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail-label {
+    font-size: 0.85rem;
+    color: #666666;
+}
+
+.detail-value {
+    font-size: 0.95rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* הדגשה מיוחדת ליעד הטיסה */
+.dest-highlight {
+    color: #00adb5;
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+/* כפתור חזרה למסך הראשי בתחתית העמוד */
+.back-home-button {
+    background-color: transparent;
+    border: 1px solid #444444;
+    color: #aaaaaa;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: center;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    margin-top: 10px;
+}
+
+.back-home-button:hover {
+    background-color: #252526;
+    color: #ffffff;
+    border-color: #666666;
+}
+
+/* מצב שאין הזמנות עדיין - קופסה מעוצבת */
+.no-bookings-box {
+    text-align: center;
+    background-color: #1e1e1e;
+    padding: 50px 30px;
+    border-radius: 12px;
+    border: 1px dashed #444444;
+}
+
+.no-bookings-box p {
+    color: #aaaaaa;
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* כפתור למעבר ללוח הטיסות מתוך מסך הריק */
+.explore-btn {
+    background-color: #00adb5;
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.explore-btn:hover {
+    background-color: #008c92;
+}
+
+/* טקסט טעינה באמצע המסך */
+.loading-text {
+    color: #aaaaaa;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 50px auto;
+}
+
+/* אנימציית כניסה עדינה לכרטיסים */
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

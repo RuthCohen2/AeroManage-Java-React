@@ -1,0 +1,126 @@
+.flights-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl; /* התאמה לעברית */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.flights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.flight-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s;
+    border: 1px solid #eee;
+}
+
+.flight-card:hover {
+    transform: translateY(-5px);
+}
+
+.flight-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.airline {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 1.1rem;
+}
+
+.flight-number {
+    background: #f1f3f5;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #495057;
+}
+
+.flight-route {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.arrow {
+    color: #aaa;
+    transform: scaleX(-1); /* הפיכת החץ שיתאים מימין לשמאל */
+}
+
+.flight-details {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.flight-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.book-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.book-btn:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.book-btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.loading, .error {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 50px;
+    direction: rtl;
+}
+.error { color: red; }
+.flight-card-link {
+    text-decoration: none; /* מוריד קו תחתון */
+    color: inherit;        /* שומר על צבעי הטקסט המקוריים של הכרטיס */
+    display: block;        /* גורם לקישור לתפוס את כל גודל הכרטיס */
+}
