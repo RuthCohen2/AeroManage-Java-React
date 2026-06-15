@@ -1,37 +1,3 @@
-// import React from 'react';
-// import { useParams, useNavigate } from 'react-router-dom';
-
-// function FlightDetails() {
-//   // useParams מושך את ה-ID מתוך כתובת ה-URL (למשל /flights/3)
-//   const { id } = useParams<{ id: string }>();
-//   const navigate = useNavigate();
-
-//   return (
-//     <div style={{ padding: '20px', color: 'black', textAlign: 'right', direction: 'rtl' }}>
-//       <h2>✈️ פרטי הטיסה שנבחרה (מספר מזהה: {id})</h2>
-//       <p>כאן יוצגו כל הפרטים המלאים של הטיסה שימשכו מה-Backend בהמשך...</p>
-      
-//       <div style={{ marginTop: '30px' }}>
-//         <button 
-//           onClick={() => navigate('/')} 
-//           style={{ padding: '10px 15px', backgroundColor: '#6c757d', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', marginLeft: '10px' }}
-//         >
-//           חזרה ללוח הטיסות
-//         </button>
-        
-//         <button 
-//           onClick={() => navigate(`/checkout/${id}`)} 
-//           style={{ padding: '10px 15px', backgroundColor: '#28a745', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
-//         >
-//           המשך לתשלום 💳
-//         </button>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default FlightDetails;
-
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
